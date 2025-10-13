@@ -10,6 +10,8 @@ public class EmployeeDTO {
     private LocalDate dateOfJoining;
     Boolean isActive;
 
+    public EmployeeDTO() {}
+
     public EmployeeDTO(Long id, String name, String email, int age, LocalDate dateOfJoining, Boolean isActive) {
         this.id = id;
         this.name = name;
