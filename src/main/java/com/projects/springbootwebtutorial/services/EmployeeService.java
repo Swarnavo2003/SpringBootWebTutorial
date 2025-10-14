@@ -71,11 +71,7 @@ public class EmployeeService {
             fieldToBeUpdated.setAccessible(true);
             ReflectionUtils.setField(fieldToBeUpdated, employeeEntity, value);
         });
-
-        // Save the updated entity
         EmployeeEntity savedEmployeeEntity = employeeRepository.save(employeeEntity);
-
-        // Map and return the DTO
         return modelMapper.map(savedEmployeeEntity, EmployeeDTO.class);
     }
 }

@@ -1,14 +1,22 @@
 package com.projects.springbootwebtutorial.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.time.LocalDate;
 
+@Setter
+@Getter
 public class EmployeeDTO {
     private Long id;
     private String name;
     private String email;
     private int age;
     private LocalDate dateOfJoining;
-    Boolean isActive;
+
+    @JsonProperty("isActive")
+    private Boolean isActive;
 
     public EmployeeDTO() {}
 
@@ -19,53 +27,5 @@ public class EmployeeDTO {
         this.age = age;
         this.dateOfJoining = dateOfJoining;
         this.isActive = isActive;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public LocalDate getDateOfJoining() {
-        return dateOfJoining;
-    }
-
-    public void setDateOfJoining(LocalDate dateOfJoining) {
-        this.dateOfJoining = dateOfJoining;
-    }
-
-    public Boolean getActive() {
-        return isActive;
-    }
-
-    public void setActive(Boolean active) {
-        isActive = active;
     }
 }
